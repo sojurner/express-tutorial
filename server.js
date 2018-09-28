@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 5000;
 const app = express();
 
 hbs.registerPartials(__dirname + '/views/partials'); //https://nodejs.org/docs/latest/api/modules.html#modules_dirname  //https://handlebarsjs.com/partials.html
@@ -65,6 +66,6 @@ app.get('/bad', (request, response) => {
   });
 });
 
-app.listen(5000, () => {
-  console.log('server is running on 5000');
+app.listen(port, () => {
+  console.log(`server is running on ${port}`);
 });
